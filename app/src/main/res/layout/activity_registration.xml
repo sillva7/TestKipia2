@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.RegistrationActivity">
+    <EditText
+        android:id="@+id/editTextRegistrationLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="@string/email"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="200dp"
+        />
+    <EditText
+        android:id="@+id/editTextRegistrationPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRegistrationLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="@string/password"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        />
+    <Button
+        android:id="@+id/buttonRegistration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRegistrationPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/registration"
+        />
+    <TextView
+        android:id="@+id/textViewToLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRegistration"
+        app:layout_constraintStart_toStartOf="@+id/buttonRegistration"
+        app:layout_constraintEnd_toEndOf="@+id/buttonRegistration"
+        android:text="@string/i_m_already_have_an_account"
+        android:layout_marginTop="150dp"
+        android:textSize="15sp"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TestKipia2</string>
+    <string name="registration">REGISTRATION</string>
+    <string name="i_m_already_have_an_account">I am already have an account</string>
+    <string name="i_dont_have_an_account">I dont have an account</string>
+    <string name="email">EMAIL</string>
+    <string name="password">PASSWORD</string>
+    <string name="To_registration_page">To registration page</string>
+    <string name="Registered">Registered</string>
+    <string name="Error">Error</string>
+    <string name="exit">Exit</string>
+    <string name="login">Login</string>
+    <string name="result">Result</string>
+    <string name="your_result">Your result:</string>
+    <string name="makeTest">makeTest</string>
+    <string name="number_of_test">Number of test: </string>
+    <string name="name_of_test">Name of test: </string>
+    <string name="wait_until_results_will_made">Wait until results will made</string>
+    <string name="correct_answers">Correct answers</string>
+</resources>

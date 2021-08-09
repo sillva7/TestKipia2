@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="2dp"
+    android:layout_marginEnd="2dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="10dp"
+
+    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_border_card">
+
+        <TextView
+            android:id="@+id/textOfQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="QUESTION"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <GridLayout
+
+            android:id="@+id/gridOfAnswers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:columnCount="1"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textOfQuestion">
+
+            <Button
+                android:id="@+id/buttonOf1Answer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="5dp"
+                tools:text="ANSWER1"
+                android:autoSizeTextType="uniform"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#000000"
+                />
+
+            <Button
+                android:id="@+id/buttonOf2Answer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:autoSizeTextType="uniform"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#000000"
+                tools:text="ANSWER2" />
+
+            <Button
+                android:id="@+id/buttonOf3Answer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="5dp"
+                android:autoSizeTextType="uniform"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#000000"
+                tools:text="ANSWER3" />
+
+            <Button
+                android:id="@+id/buttonOf4Answer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:autoSizeTextType="uniform"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#000000"
+                tools:text="ANSWER4" />
+
+        </GridLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

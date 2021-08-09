@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/ic_border_card">
+
+    <TextView
+        android:id="@+id/nameOfTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/staticTV1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Name Of Test" />
+
+    <TextView
+        android:id="@+id/numberOfTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toEndOf="@+id/staticTV2"
+        app:layout_constraintTop_toBottomOf="@+id/nameOfTest"
+        tools:text="Number Of test" />
+
+    <TextView
+        android:id="@+id/staticTV1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name_of_test"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingEnd="10dp"
+        />
+
+    <TextView
+        android:id="@+id/staticTV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/number_of_test"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameOfTest"
+        android:paddingEnd="10dp"
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
