@@ -20,7 +20,9 @@
         <activity android:name=".Activities.ResultActivityForUser" />
         <activity android:name=".Activities.InTestActivity" />
         <activity android:name=".Activities.LoginActivity" />
-        <activity android:name=".Activities.RegistrationActivity" />
+        <activity android:name=".Activities.RegistrationActivity" >
+
+        </activity>
         <activity android:name=".Activities.TestBodyActivity">
 
         </activity>

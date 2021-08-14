@@ -34,6 +34,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
@@ -110,7 +111,7 @@ public class ResultActivityForAdmin extends AppCompatActivity {
     }
 
     private void takeResultsFromCloud() {
-        db.collection("Result").orderBy("time").addSnapshotListener(new EventListener<QuerySnapshot>() {//получение из клауда список тестов
+        db.collection("Result").orderBy("time", Query.Direction.DESCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {//получение из клауда список тестов
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 List<Result> results = null;

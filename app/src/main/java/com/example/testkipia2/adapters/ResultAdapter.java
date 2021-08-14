@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.testkipia2.R;
@@ -41,7 +42,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ResultViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ResultViewHolder holder, int position) {//метод с присвоением значений для разных элементов айтема
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");//блок для превращения милисекунд в дату
         String dateString = formatter.format(new Date(results.get(position).getTime()));
@@ -49,6 +50,19 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
         holder.nameOfTester.setText(results.get(position).getNameOfTester());
         holder.result.setText(results.get(position).getResult()+"");
         holder.resultTime.setText(dateString);
+
+        if(Integer.parseInt(holder.result.getText().toString())>=9){
+            holder.innerConstraint.setBackgroundColor(0xFF4CAF50);
+            holder.result.setText(results.get(position).getResult()+"/10");
+
+        }else{
+            holder.innerConstraint.setBackgroundColor(0xFFff3829);
+            holder.result.setText(results.get(position).getResult()+"/10");
+
+        }
+
+
+
     }
 
     @Override
@@ -61,6 +75,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
         private TextView nameOfTester;
         private TextView result;
         private TextView resultTime;
+        private ConstraintLayout innerConstraint;
 
 
         public ResultViewHolder(@NonNull View itemView) {
@@ -69,6 +84,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
             nameOfTester = itemView.findViewById(R.id.nameOfTester);
             result = itemView.findViewById(R.id.result);
             resultTime = itemView.findViewById(R.id.resultTime);
+            innerConstraint = itemView.findViewById(R.id.innerConstraint);
 
         }
     }

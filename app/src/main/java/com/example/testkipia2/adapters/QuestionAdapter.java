@@ -79,12 +79,12 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
             buttonOf3Answer = itemView.findViewById(R.id.buttonOf3Answer);
             buttonOf4Answer = itemView.findViewById(R.id.buttonOf4Answer);
 
-            buttonOf1Answer.setOnClickListener(new View.OnClickListener() {
+            buttonOf1Answer.setOnClickListener(new View.OnClickListener() {//делаем кнопки разными цветами, при нажатии
                 @Override
                 public void onClick(View v) {
                     MapOfAnswers.answers.put(textOfQuestion.getText().toString(), buttonOf1Answer.getText().toString());
 
-                    buttonOf1Answer.setBackgroundColor(0xFF4CAF50);
+                    buttonOf1Answer.setBackgroundColor(0xFFfff90f);
                     buttonOf2Answer.setBackgroundColor(0xFFFFFFFF);
                     buttonOf3Answer.setBackgroundColor(0xFFFFFFFF);
                     buttonOf4Answer.setBackgroundColor(0xFFFFFFFF);
@@ -96,7 +96,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
                 public void onClick(View v) {
                     MapOfAnswers.answers.put(textOfQuestion.getText().toString(), buttonOf2Answer.getText().toString());
 
-                    buttonOf2Answer.setBackgroundColor(0xFF4CAF50);
+                    buttonOf2Answer.setBackgroundColor(0xFFfff90f);
                     buttonOf1Answer.setBackgroundColor(0xFFFFFFFF);
                     buttonOf3Answer.setBackgroundColor(0xFFFFFFFF);
                     buttonOf4Answer.setBackgroundColor(0xFFFFFFFF);
@@ -107,7 +107,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
                 public void onClick(View v) {
                     MapOfAnswers.answers.put(textOfQuestion.getText().toString(), buttonOf3Answer.getText().toString());
 
-                    buttonOf3Answer.setBackgroundColor(0xFF4CAF50);
+                    buttonOf3Answer.setBackgroundColor(0xFFfff90f);
                     buttonOf2Answer.setBackgroundColor(0xFFFFFFFF);
                     buttonOf1Answer.setBackgroundColor(0xFFFFFFFF);
                     buttonOf4Answer.setBackgroundColor(0xFFFFFFFF);
@@ -118,7 +118,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
                 public void onClick(View v) {
                     MapOfAnswers.answers.put(textOfQuestion.getText().toString(), buttonOf4Answer.getText().toString());
 
-                    buttonOf4Answer.setBackgroundColor(0xFF4CAF50);
+                    buttonOf4Answer.setBackgroundColor(0xFFfff90f);
                     buttonOf2Answer.setBackgroundColor(0xFFFFFFFF);
                     buttonOf3Answer.setBackgroundColor(0xFFFFFFFF);
                     buttonOf1Answer.setBackgroundColor(0xFFFFFFFF);

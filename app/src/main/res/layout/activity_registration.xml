@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:hint="@string/email"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="100dp"
         />
     <EditText
         android:id="@+id/editTextRegistrationPassword"
@@ -26,30 +26,54 @@
         android:hint="@string/password"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
+        android:inputType="numberPassword"
+
         />
+    <EditText
+        android:id="@+id/editTextRegistration1stName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRegistrationPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="@string/name"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:id="@+id/editTextRegistration2ndName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRegistration1stName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="@string/surname"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:id="@+id/editTextRegistration3rdName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRegistration2ndName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="@string/_3rd_name_if_exist"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        />
+
     <Button
         android:id="@+id/buttonRegistration"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRegistrationPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRegistration3rdName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
         android:text="@string/registration"
         />
-    <TextView
-        android:id="@+id/textViewToLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRegistration"
-        app:layout_constraintStart_toStartOf="@+id/buttonRegistration"
-        app:layout_constraintEnd_toEndOf="@+id/buttonRegistration"
-        android:text="@string/i_m_already_have_an_account"
-        android:layout_marginTop="150dp"
-        android:textSize="15sp"
-        />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

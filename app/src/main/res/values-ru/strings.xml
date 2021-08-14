@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Тест по КИП и А</string>
+    <string name="registration">Регистрация</string>
+    <string name="i_m_already_have_an_account">У меня уже есть аккаунт</string>
+    <string name="i_dont_have_an_account">У меня НЕТ аккаунта</string>
+    <string name="email">EMAIL</string>
+    <string name="password">ПАРОЛЬ</string>
+    <string name="To_registration_page">Регистрация</string>
+    <string name="Registered">Зарегистрировано</string>
+    <string name="Error">Ошибка</string>
+    <string name="exit">Выход</string>
+    <string name="login">Логин</string>
+    <string name="result">Результат</string>
+    <string name="your_result">Ваш результат::</string>
+    <string name="makeTest">makeTest</string>
+    <string name="number_of_test">Номер теста: </string>
+    <string name="name_of_test">Название теста: </string>
+    <string name="wait_until_results_will_made">Подождите пока результаты будут подсчитаны</string>
+    <string name="correct_answers">Правильных ответов</string>
+    <string name="passed">СДАН</string>
+    <string name="failed">ПРОВАЛЕН</string>
+    <string name="name">ИМЯ</string>
+    <string name="surname">ФАМИЛИЯ</string>
+    <string name="_3rd_name_if_exist">ОТЧЕСТВО (если есть)</string>
+    <string name="To_login">Вход</string>
+</resources>

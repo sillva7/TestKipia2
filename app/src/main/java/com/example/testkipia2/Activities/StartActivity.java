@@ -4,11 +4,16 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.testkipia2.R;
+
+
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
 import com.firebase.ui.auth.IdpResponse;
@@ -22,6 +27,7 @@ import java.util.List;
 public class StartActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private Button toRegistration, toLogin;
 
 
     @Override
@@ -29,11 +35,16 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         //signIn();
+        toRegistration = findViewById(R.id.toRegistration);
+        toLogin = findViewById(R.id.toLogin);
         mAuth = FirebaseAuth.getInstance();
-        mAuth.signOut();
-        if (mAuth.getCurrentUser() == null) {
-            signIn();
+        if(mAuth!=null){
+
+        }else{
+            mAuth.signOut();
+
         }
+
 //        else if(mAuth.getCurrentUser().getEmail().equals("twinborder@gmail.com")){
 //            Intent intent = new Intent(StartActivity.this, ResultActivityForAdmin.class);
 //            startActivity(intent);
@@ -43,53 +54,63 @@ public class StartActivity extends AppCompatActivity {
 //        }
     }
 
-    private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(
-            new FirebaseAuthUIActivityResultContract(),
-            new ActivityResultCallback<FirebaseAuthUIAuthenticationResult>() {
-                @Override
-                public void onActivityResult(FirebaseAuthUIAuthenticationResult result) {
-                    onSignInResult(result);
+//    private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(//для пре-билд регистрации
+//            new FirebaseAuthUIActivityResultContract(),
+//            new ActivityResultCallback<FirebaseAuthUIAuthenticationResult>() {
+//                @Override
+//                public void onActivityResult(FirebaseAuthUIAuthenticationResult result) {
+//                    onSignInResult(result);
+//
+//
+//
+//                }
+//            }
+//    );
+//
+//    private void signIn() {//для пре-билд регистрации
+//        // Choose authentication providers
+//        List<AuthUI.IdpConfig> providers = Arrays.asList(
+//                new AuthUI.IdpConfig.EmailBuilder().build(),
+//                new AuthUI.IdpConfig.GoogleBuilder().build());
+//
+//        // Create and launch sign-in intent
+//        Intent signInIntent = AuthUI.getInstance()
+//                .createSignInIntentBuilder()
+//                .setAvailableProviders(providers)
+//                .build();
+//        signInLauncher.launch(signInIntent);
+//    }
 
+//    private void onSignInResult(FirebaseAuthUIAuthenticationResult result) {//для пре-билд регистрации
+//        IdpResponse response = result.getIdpResponse();
+//        if (result.getResultCode() == RESULT_OK) {
+//            // Successfully signed in
+//            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//            if (user.getEmail().equals("twinborder@gmail.com")) {
+//                Intent intent = new Intent(StartActivity.this, ResultActivityForAdmin.class);
+//                startActivity(intent);
+//                Toast.makeText(StartActivity.this, "" + result.getIdpResponse().getEmail(), Toast.LENGTH_SHORT).show();
+//            } else {
+//                Intent intent = new Intent(StartActivity.this, TestBodyActivity.class);
+//                startActivity(intent);
+//                Toast.makeText(StartActivity.this, "" + result.getIdpResponse().getEmail(), Toast.LENGTH_SHORT).show();
+//            }
+//            // ...
+//        } else {
+//            // Sign in failed. If response is null the user canceled the
+//            // sign-in flow using the back button. Otherwise check
+//            // response.getError().getErrorCode() and handle the error.
+//            // ...
+//        }
+//    }
 
-
-                }
-            }
-    );
-
-    private void signIn() {
-        // Choose authentication providers
-        List<AuthUI.IdpConfig> providers = Arrays.asList(
-                new AuthUI.IdpConfig.EmailBuilder().build(),
-                new AuthUI.IdpConfig.GoogleBuilder().build());
-
-        // Create and launch sign-in intent
-        Intent signInIntent = AuthUI.getInstance()
-                .createSignInIntentBuilder()
-                .setAvailableProviders(providers)
-                .build();
-        signInLauncher.launch(signInIntent);
+    public void toRegistrationPage(View view) {
+        Intent intent = new Intent(StartActivity.this, RegistrationActivity.class);
+        startActivity(intent);
     }
 
-    private void onSignInResult(FirebaseAuthUIAuthenticationResult result) {
-        IdpResponse response = result.getIdpResponse();
-        if (result.getResultCode() == RESULT_OK) {
-            // Successfully signed in
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            if (user.getEmail().equals("twinborder@gmail.com")) {
-                Intent intent = new Intent(StartActivity.this, ResultActivityForAdmin.class);
-                startActivity(intent);
-                Toast.makeText(StartActivity.this, "" + result.getIdpResponse().getEmail(), Toast.LENGTH_SHORT).show();
-            } else {
-                Intent intent = new Intent(StartActivity.this, TestBodyActivity.class);
-                startActivity(intent);
-                Toast.makeText(StartActivity.this, "" + result.getIdpResponse().getEmail(), Toast.LENGTH_SHORT).show();
-            }
-            // ...
-        } else {
-            // Sign in failed. If response is null the user canceled the
-            // sign-in flow using the back button. Otherwise check
-            // response.getError().getErrorCode() and handle the error.
-            // ...
-        }
+    public void toLoginPage(View view) {
+        Intent intent = new Intent(StartActivity.this, LoginActivity.class);
+        startActivity(intent);
     }
 }

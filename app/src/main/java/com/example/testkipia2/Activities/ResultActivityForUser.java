@@ -24,6 +24,7 @@ public class ResultActivityForUser extends AppCompatActivity {
     private int countOfAnswers;
     private Intent intent;
     private FirebaseAuth mAuth;
+    private TextView textViewResultPass;
 
 
 
@@ -36,8 +37,11 @@ public class ResultActivityForUser extends AppCompatActivity {
         countOfAnswers = intent.getIntExtra("countOfAnswers", 0);
         Log.d("123123", "onCreate456: " + MapOfAnswers.answers.toString());
         numberOfCorrectAnswers = findViewById(R.id.numberOfCorrectAnswers);
-        numberOfCorrectAnswers.setText(countOfAnswers+"");
+        numberOfCorrectAnswers.setText(countOfAnswers + "/10");
         mAuth = FirebaseAuth.getInstance();
+        textViewResultPass = findViewById(R.id.textViewResultPass);
+
+        showStatusOfResult();
 
 
 
@@ -56,6 +60,16 @@ public class ResultActivityForUser extends AppCompatActivity {
 //        }
 //        Log.d("123123", "onCreate: " + correctAnswersMap.toString());
 
+    }
+
+    private void showStatusOfResult() {
+        if(countOfAnswers>=9){
+            textViewResultPass.setText(R.string.passed);
+            textViewResultPass.setTextColor(0xFF4CAF50);
+        }else{
+            textViewResultPass.setText(R.string.failed);
+            textViewResultPass.setTextColor(0xFFff3829);
+        }
     }
 
 //    @Override

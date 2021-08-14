@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         editTextLoginLogin = findViewById(R.id.editTextLoginLogin);
         editTextLoginPassword = findViewById(R.id.editTextLoginPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
-        textViewToRegistration = findViewById(R.id.textViewToRegistration);
+//        textViewToRegistration = findViewById(R.id.textViewToRegistration);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -44,13 +44,13 @@ public class LoginActivity extends AppCompatActivity {
                 signIn();
             }
         });
-        textViewToRegistration.setOnClickListener(new View.OnClickListener() {//текстовое поле при нажатии на которое переходим на страницу регистрации
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
-                startActivity(intent);
-            }
-        });
+//        textViewToRegistration.setOnClickListener(new View.OnClickListener() {//текстовое поле при нажатии на которое переходим на страницу регистрации
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 
@@ -67,7 +67,12 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Intent intent = new Intent(LoginActivity.this, TestBodyActivity.class);
+                            Intent intent;
+                            if (email.equals("twinborder@gmail.com")) {
+                                intent = new Intent(LoginActivity.this, ResultActivityForAdmin.class);
+                            } else {
+                                intent = new Intent(LoginActivity.this, TestBodyActivity.class);
+                            }
                             startActivity(intent);
 
                         }else{

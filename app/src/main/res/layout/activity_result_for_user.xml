@@ -11,20 +11,40 @@
         android:id="@+id/textOfActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
         android:text="@string/your_result"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"
         />
+
     <TextView
         android:id="@+id/numberOfCorrectAnswers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/textOfActivity"
-        app:layout_constraintTop_toTopOf="@+id/textOfActivity"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="48dp"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/textOfActivity"
+        app:layout_constraintStart_toStartOf="@+id/textOfActivity"
+        app:layout_constraintTop_toTopOf="@+id/textOfActivity"
         tools:text="RESULT"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/textViewResultPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Passed/did not passed"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/textOfActivity"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/textOfActivity"
+        app:layout_constraintTop_toBottomOf="@+id/numberOfCorrectAnswers"
+        android:textColor="@color/black"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
